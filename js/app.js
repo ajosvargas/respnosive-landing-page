@@ -4,7 +4,7 @@ Universal Vars
 
 */
 
-const navbar = document.querySelector('#navbar_list');
+const navbar = document.querySelector('#navbar__list');
 const sections = document.querySelectorAll('section');
 
 
@@ -58,8 +58,8 @@ Function to Scroll into View
 */
 
 let scrollToSec = () => {
-    navbar.addEventListener('click', (e) => {
-        const clicker = document.querySelector('#' + e.target.dataset.nav);
+    navbar.addEventListener('click', (event) => {
+        const clicker = document.querySelector('#'+event.target.dataset.nav);
         clicker.scrollIntoView();
     })
 }
