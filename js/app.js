@@ -4,7 +4,7 @@ Universal Vars
 
 */
 
-const navbar = document.querySelector('#navbar__list');
+const navbar = document.querySelector('#list');
 const sections = document.querySelectorAll('section');
 
 
@@ -44,7 +44,6 @@ Function to Create Navbar
 let navCreator = () => {
     for(let item of sections) {
         let newSection = document.createElement('li');
-        newSection.className = 'menu_link';
         newSection.dataset.nav = item.dataset.nav;
         newSection.innerText = item.dataset.nav;
         navbar.appendChild(newSection);
