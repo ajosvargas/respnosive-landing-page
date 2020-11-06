@@ -7,29 +7,28 @@ Universal Vars
 const navbar = document.querySelector('#list');
 const sections = document.querySelectorAll('section');
 
-
-
 /* 
 
 Function to set Active state
 
 */
 
-observer = new IntersectionObserver ((entries) => {
+const config = {
+    threshold: 0.5
+}
+
+let observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if(entry.intersectionRatio > 0) {
-            entry.target.classList.add('active');
-        } else {
-            entry.target.classList.remove('active');
-        }
+      entry.target.classList.toggle('blue');
     });
-});
+  }, config);
 
 /* 
 
 Calling Observer to fire callback when each section is on screen
 
 */
+
 sections.forEach(section => {
     observer.observe(section);
 });
@@ -39,7 +38,6 @@ sections.forEach(section => {
 Function to Create Navbar
 
 */ 
-
 
 let navCreator = () => {
     for(let item of sections) {
@@ -62,6 +60,12 @@ let scrollToSec = () => {
         clicker.scrollIntoView();
     })
 }
+
+/* 
+
+Fire Functions
+
+*/
 
 navCreator();
 

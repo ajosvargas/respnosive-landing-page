@@ -183,6 +183,12 @@ section:nth-of-type(even) .container {
     text-align: right; 
 }
 
-section.active{
+.sec {
     border: 1px solid rgba(253,187,45,1);
 }
+
+.sec.blue{
+    border: 1px solid  rgba(34,193,195,1);
+}
+
+/* Some styles taken from Udacity skeleton file https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page */
