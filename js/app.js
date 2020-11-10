@@ -16,7 +16,9 @@ Function for a sticky header
 
 */
 
-window.onscroll = stickyHeader();
+let scrollHead = () => {
+    window.addEventListener('scroll', stickyHeader);
+}
 
 let stickyHeader = () => {
     let sticky = header.offsetTop;
@@ -49,8 +51,9 @@ let resetTimer = () => {
 }
 
 let setupTimes = () => {
-    document.addEventListener('mousemove', resetTimer)
-    document.addEventListener('mousedown', resetTimer)
+    document.addEventListener('mousemove', resetTimer, false)
+    document.addEventListener('mousedown', resetTimer, false)
+    document.addEventListener('mouseup', resetTimer, false)
 
     startTimer();
 }
@@ -118,5 +121,7 @@ Fire Functions
 navCreator();
 
 scrollToSec();
+
+scrollHead();
 
 setupTimes();

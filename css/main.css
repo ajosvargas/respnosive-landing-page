@@ -11,6 +11,24 @@ body {
     color: #fff;
 }
 
+.page_header {
+    padding: 4px 8px;
+  }
+
+  .content {
+      padding: 10px;
+  }
+
+  .stick{
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+
+  .sticky + .content {
+    padding-top: 50px;
+  }
+
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3rem;
