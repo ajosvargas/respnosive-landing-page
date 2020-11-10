@@ -6,6 +6,29 @@ Universal Vars
 
 const navbar = document.querySelector('#list');
 const sections = document.querySelectorAll('section');
+const timer = 10000;
+let timeoutId;
+
+let startTimer = () => {
+    timeoutId = window.setTimeout(hideNav, timer);
+}
+
+let hideNav = () => {
+   navbar.style.display = "none";
+}
+
+let resetTimer = () => {
+    window.clearTimeout(timeoutId);
+    navbar.style.display = "block";
+    startTimer();
+}
+
+function setupTimes () {
+    document.addEventListener("mousemove", resetTimer)
+    document.addEventListener("mousedown", resetTimer)
+
+    startTimer();
+}
 
 /* 
 
@@ -70,3 +93,5 @@ Fire Functions
 navCreator();
 
 scrollToSec();
+
+setupTimes();
