@@ -6,8 +6,27 @@ Universal Vars
 
 const navbar = document.querySelector('#list');
 const sections = document.querySelectorAll('section');
+const header = document.querySelector('.page_header')
 const timer = 10000;
 let timeoutId;
+
+/*
+
+Function for a sticky header
+
+*/
+
+window.onscroll = stickyHeader();
+
+let stickyHeader = () => {
+    let sticky = header.offsetTop;
+
+    if(window.pageYOffset > sticky) {
+        header.classList.add('stick');
+    } else {
+        header.classList.remove('stick');
+    }
+}
 
 /* 
 
@@ -20,18 +39,18 @@ let startTimer = () => {
 }
 
 let hideNav = () => {
-   navbar.style.display = "none";
+   navbar.style.display = 'none';
 }
 
 let resetTimer = () => {
     window.clearTimeout(timeoutId);
-    navbar.style.display = "block";
+    navbar.style.display = 'block';
     startTimer();
 }
 
 let setupTimes = () => {
-    document.addEventListener("mousemove", resetTimer)
-    document.addEventListener("mousedown", resetTimer)
+    document.addEventListener('mousemove', resetTimer)
+    document.addEventListener('mousedown', resetTimer)
 
     startTimer();
 }
