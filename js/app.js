@@ -51,9 +51,7 @@ let resetTimer = () => {
 }
 
 let setupTimes = () => {
-    document.addEventListener('mousemove', resetTimer, false)
-    document.addEventListener('mousedown', resetTimer, false)
-    document.addEventListener('mouseup', resetTimer, false)
+    document.addEventListener('scroll', resetTimer, false)
 
     startTimer();
 }
