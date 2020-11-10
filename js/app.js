@@ -9,6 +9,12 @@ const sections = document.querySelectorAll('section');
 const timer = 10000;
 let timeoutId;
 
+/* 
+
+Functions to hide Nav
+
+*/
+
 let startTimer = () => {
     timeoutId = window.setTimeout(hideNav, timer);
 }
