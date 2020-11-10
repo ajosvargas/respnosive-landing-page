@@ -29,7 +29,7 @@ let resetTimer = () => {
     startTimer();
 }
 
-function setupTimes () {
+let setupTimes = () => {
     document.addEventListener("mousemove", resetTimer)
     document.addEventListener("mousedown", resetTimer)
 
